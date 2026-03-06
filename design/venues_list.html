@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Nearby Channels Discovery</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2b8cee",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "Noto Sans SC", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display antialiased">
+    <div
+        class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white dark:bg-slate-900 shadow-xl">
+        <!-- Header -->
+        <div
+            class="sticky top-0 z-10 flex items-center bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-3 border-b border-slate-100 dark:border-slate-800 justify-between">
+            <button
+                class="text-slate-900 dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                <span class="material-symbols-outlined text-[24px]">arrow_back</span>
+            </button>
+            <h2
+                class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">
+                附近的现场</h2>
+            <button
+                class="flex w-10 h-10 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                <span class="material-symbols-outlined text-primary text-[24px]">filter_list</span>
+            </button>
+        </div>
+        <!-- Search Bar -->
+        <div class="px-4 py-3 bg-white dark:bg-slate-900">
+            <label class="flex flex-col w-full h-11">
+                <div class="flex w-full flex-1 items-center rounded-xl bg-slate-100 dark:bg-slate-800 px-3">
+                    <span class="material-symbols-outlined text-slate-400 dark:text-slate-500 text-[20px]">search</span>
+                    <input
+                        class="flex w-full min-w-0 flex-1 resize-none overflow-hidden border-none bg-transparent text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 px-2 text-base font-normal leading-normal focus:ring-0"
+                        placeholder="搜索附近的现场" value="">
+                </div>
+            </label>
+        </div>
+        <!-- Content List -->
+        <div class="flex-1 flex flex-col pb-20">
+            <h3 class="text-slate-900 dark:text-white text-base font-bold leading-tight px-4 py-3 mt-2">热门现场</h3>
+            <!-- Item 1: Shopping Mall -->
+            <div
+                class="group flex gap-4 px-4 py-4 items-center bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors border-b border-slate-100 dark:border-slate-800 cursor-pointer">
+                <div class="flex items-center justify-center rounded-xl bg-primary/10 text-primary shrink-0 size-12">
+                    <span class="material-symbols-outlined text-[24px]">shopping_bag</span>
+                </div>
+                <div class="flex flex-1 flex-col justify-center min-w-0">
+                    <div class="flex items-center gap-2 mb-1">
+                        <p class="text-slate-900 dark:text-white text-base font-semibold leading-normal truncate">万达广场
+                            (五角场店)</p>
+                    </div>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal truncate">
+                        上海市杨浦区五角场街道淞沪路77号</p>
+                    <div class="flex items-center gap-1 mt-1.5">
+                        <span class="material-symbols-outlined text-red-500 text-[14px]">local_fire_department</span>
+                        <p class="text-red-500 text-xs font-medium leading-none">15条实时说说</p>
+                    </div>
+                </div>
+                <div class="shrink-0 text-slate-300 dark:text-slate-600 group-hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined text-[24px]">chevron_right</span>
+                </div>
+            </div>
+            <!-- Item 2: Hospital -->
+            <div
+                class="group flex gap-4 px-4 py-4 items-center bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors border-b border-slate-100 dark:border-slate-800 cursor-pointer">
+                <div
+                    class="flex items-center justify-center rounded-xl bg-red-50 dark:bg-red-900/20 text-red-500 shrink-0 size-12">
+                    <span class="material-symbols-outlined text-[24px]">local_hospital</span>
+                </div>
+                <div class="flex flex-1 flex-col justify-center min-w-0">
+                    <div class="flex items-center gap-2 mb-1">
+                        <p class="text-slate-900 dark:text-white text-base font-semibold leading-normal truncate">华山医院
+                        </p>
+                    </div>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal truncate">
+                        上海市静安区乌鲁木齐中路12号</p>
+                    <div class="flex items-center gap-1 mt-1.5">
+                        <span class="material-symbols-outlined text-red-500 text-[14px]">local_fire_department</span>
+                        <p class="text-red-500 text-xs font-medium leading-none">8条实时说说</p>
+                    </div>
+                </div>
+                <div class="shrink-0 text-slate-300 dark:text-slate-600 group-hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined text-[24px]">chevron_right</span>
+                </div>
+            </div>
+            <!-- Item 3: School -->
+            <div
+                class="group flex gap-4 px-4 py-4 items-center bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors border-b border-slate-100 dark:border-slate-800 cursor-pointer">
+                <div
+                    class="flex items-center justify-center rounded-xl bg-indigo-50 dark:bg-indigo-900/20 text-indigo-500 shrink-0 size-12">
+                    <span class="material-symbols-outlined text-[24px]">school</span>
+                </div>
+                <div class="flex flex-1 flex-col justify-center min-w-0">
+                    <div class="flex items-center gap-2 mb-1">
+                        <p class="text-slate-900 dark:text-white text-base font-semibold leading-normal truncate">复旦大学
+                            (邯郸校区)</p>
+                    </div>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal truncate">
+                        上海市杨浦区邯郸路220号</p>
+                    <div class="flex items-center gap-1 mt-1.5">
+                        <span class="material-symbols-outlined text-orange-500 text-[14px]">local_fire_department</span>
+                        <p class="text-slate-400 text-xs font-medium leading-none">3条实时说说</p>
+                    </div>
+                </div>
+                <div class="shrink-0 text-slate-300 dark:text-slate-600 group-hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined text-[24px]">chevron_right</span>
+                </div>
+            </div>
+            <!-- Item 4: Train Station -->
+            <div
+                class="group flex gap-4 px-4 py-4 items-center bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors border-b border-slate-100 dark:border-slate-800 cursor-pointer">
+                <div
+                    class="flex items-center justify-center rounded-xl bg-teal-50 dark:bg-teal-900/20 text-teal-600 shrink-0 size-12">
+                    <span class="material-symbols-outlined text-[24px]">train</span>
+                </div>
+                <div class="flex flex-1 flex-col justify-center min-w-0">
+                    <div class="flex items-center gap-2 mb-1">
+                        <p class="text-slate-900 dark:text-white text-base font-semibold leading-normal truncate">上海虹桥站
+                        </p>
+                    </div>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal truncate">
+                        上海市闵行区申贵路1500号</p>
+                    <div class="flex items-center gap-1 mt-1.5">
+                        <span class="material-symbols-outlined text-red-500 text-[14px]">local_fire_department</span>
+                        <p class="text-red-500 text-xs font-medium leading-none">42条实时说说</p>
+                    </div>
+                </div>
+                <div class="shrink-0 text-slate-300 dark:text-slate-600 group-hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined text-[24px]">chevron_right</span>
+                </div>
+            </div>
+            <!-- Item 5: Park -->
+            <div
+                class="group flex gap-4 px-4 py-4 items-center bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors border-b border-slate-100 dark:border-slate-800 cursor-pointer">
+                <div
+                    class="flex items-center justify-center rounded-xl bg-green-50 dark:bg-green-900/20 text-green-600 shrink-0 size-12">
+                    <span class="material-symbols-outlined text-[24px]">park</span>
+                </div>
+                <div class="flex flex-1 flex-col justify-center min-w-0">
+                    <div class="flex items-center gap-2 mb-1">
+                        <p class="text-slate-900 dark:text-white text-base font-semibold leading-normal truncate">世纪公园
+                        </p>
+                    </div>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal truncate">
+                        上海市浦东新区锦绣路1001号</p>
+                    <div class="flex items-center gap-1 mt-1.5">
+                        <span class="material-symbols-outlined text-slate-400 text-[14px]">history</span>
+                        <p class="text-slate-400 text-xs font-medium leading-none">暂无新说说</p>
+                    </div>
+                </div>
+                <div class="shrink-0 text-slate-300 dark:text-slate-600 group-hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined text-[24px]">chevron_right</span>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom Navigation -->
+        <div
+            class="fixed bottom-0 w-full max-w-md border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 pb-safe pt-2">
+            <div class="flex gap-2 pb-3">
+                <a class="flex flex-1 flex-col items-center justify-end gap-1 rounded-full text-primary" href="#">
+                    <div class="flex h-8 items-center justify-center">
+                        <span class="material-symbols-outlined text-[24px] filled">location_on</span>
+                    </div>
+                    <p class="text-xs font-medium leading-normal tracking-[0.015em]">附近的现场</p>
+                </a>
+                <a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors"
+                    href="#">
+                    <div class="flex h-8 items-center justify-center">
+                        <span class="material-symbols-outlined text-[24px]">favorite</span>
+                    </div>
+                    <p class="text-xs font-medium leading-normal tracking-[0.015em]">我的关注</p>
+                </a>
+                <a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors"
+                    href="#">
+                    <div class="flex h-8 items-center justify-center">
+                        <span class="material-symbols-outlined text-[24px]">person</span>
+                    </div>
+                    <p class="text-xs font-medium leading-normal tracking-[0.015em]">个人中心</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
