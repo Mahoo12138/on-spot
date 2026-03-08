@@ -1,0 +1,47 @@
+<view class="favorites-container">
+  <navigation-bar 
+    title="我的关注" 
+    back="{{false}}"
+    fixed="{{true}}"
+    blur="{{true}}"
+  />
+  
+  <scroll-view class="favorites-content" scroll-y enhanced show-scrollbar="{{false}}">
+    <view wx:if="{{!hasFavorites}}" class="empty-state">
+      <view class="empty-icon-wrapper">
+        <text class="empty-icon">❤️</text>
+      </view>
+      <view class="empty-title">暂无关注的现场</view>
+      <view class="empty-desc">去发现附近的现场，关注感兴趣的地方</view>
+    </view>
+    
+    <block wx:else>
+      <view class="favorites-list">
+        <view 
+          class="favorite-item" 
+          wx:for="{{favorites}}" 
+          wx:key="id"
+          bindtap="goToVenueDetail"
+          data-id="{{item.id}}"
+        >
+          <view class="venue-icon {{item.category}}">
+            <text class="icon">{{item.icon}}</text>
+          </view>
+          <view class="venue-info">
+            <view class="venue-name">{{item.name}}</view>
+            <view class="venue-address">{{item.address}}</view>
+            <view class="venue-meta">
+              <text class="hot-icon" wx:if="{{item.isHot}}">🔥</text>
+              <text class="meta-text {{item.isHot ? 'hot' : ''}}">{{item.postCount}}条实时说说</text>
+            </view>
+          </view>
+          <view class="venue-arrow">
+            <text class="arrow-icon">›</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+  
+  <tab-bar activeTab="favorites" />
+</view>
