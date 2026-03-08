@@ -1,0 +1,20 @@
+<view class="tab-bar">
+  <view class="tab-item {{activeTab === 'venues' ? 'active' : ''}}" bindtap="switchTab" data-tab="venues">
+    <view class="tab-icon">
+      <text class="icon">📍</text>
+    </view>
+    <text class="tab-label">附近的现场</text>
+  </view>
+  <view class="tab-item {{activeTab === 'favorites' ? 'active' : ''}}" bindtap="switchTab" data-tab="favorites">
+    <view class="tab-icon">
+      <text class="icon">❤️</text>
+    </view>
+    <text class="tab-label">我的关注</text>
+  </view>
+  <view class="tab-item {{activeTab === 'profile' ? 'active' : ''}}" bindtap="switchTab" data-tab="profile">
+    <view class="tab-icon">
+      <text class="icon">👤</text>
+    </view>
+    <text class="tab-label">个人中心</text>
+  </view>
+</view>
