@@ -1,64 +1,47 @@
-<view class="weui-navigation-bar {{extClass}}">
-  <view class="weui-navigation-bar__inner {{ios ? 'ios' : 'android'}}" style="color: {{color}}; background: {{background}}; {{displayStyle}}; {{innerPaddingRight}}; {{safeAreaTop}};">
-
-    <!-- 左侧按钮 -->
-    <view class='weui-navigation-bar__left' style="{{leftWidth}};">
-      <block wx:if="{{back || homeButton}}">
-        <!-- 返回上一页 -->
-        <block wx:if="{{back}}">
-          <view class="weui-navigation-bar__buttons weui-navigation-bar__buttons_goback">
-            <view
-              bindtap="back"
-              class="weui-navigation-bar__btn_goback_wrapper"
-              hover-class="weui-active"
-              hover-stay-time="100"
-              aria-role="button"
-              aria-label="返回"
-            >
-              <view class="weui-navigation-bar__button weui-navigation-bar__btn_goback"></view>
-            </view>
-          </view>
-        </block>
-        <!-- 返回首页 -->
-        <block wx:if="{{homeButton}}">
-          <view class="weui-navigation-bar__buttons weui-navigation-bar__buttons_home">
-            <view
-              bindtap="home"
-              class="weui-navigation-bar__btn_home_wrapper"
-              hover-class="weui-active"
-              aria-role="button"
-              aria-label="首页"
-            >
-              <view class="weui-navigation-bar__button weui-navigation-bar__btn_home"></view>
-            </view>
-          </view>
-        </block>
+<view class="nav-bar {{extClass}} {{fixed ? 'nav-bar--fixed' : ''}} {{transparent ? 'nav-bar--transparent' : ''}} {{blur ? 'nav-bar--blur' : ''}}" style="{{innerStyle}}">
+  <view class="nav-bar__status-bar" style="height: {{statusBarHeight}}px;"></view>
+  
+  <view class="nav-bar__content" style="height: {{navBarHeight}}px;">
+    <view class="nav-bar__left" style="width: {{menuButtonRight}}px;">
+      <block wx:if="{{back}}">
+        <view 
+          class="nav-bar__btn nav-bar__btn--back" 
+          bindtap="handleBack"
+          hover-class="nav-bar__btn--active"
+          hover-stay-time="100"
+        >
+          <text class="nav-bar__btn-icon">‹</text>
+        </view>
       </block>
-      <block wx:else>
-        <slot name="left"></slot>
+      <block wx:if="{{homeButton}}">
+        <view 
+          class="nav-bar__btn nav-bar__btn--home" 
+          bindtap="handleHome"
+          hover-class="nav-bar__btn--active"
+          hover-stay-time="100"
+        >
+          <text class="nav-bar__btn-icon">🏠</text>
+        </view>
       </block>
+      <slot name="left"></slot>
     </view>
 
-    <!-- 标题 -->
-    <view class='weui-navigation-bar__center'>
-      <view wx:if="{{loading}}" class="weui-navigation-bar__loading" aria-role="alert">
-        <view
-          class="weui-loading"
-          aria-role="img"
-          aria-label="加载中"
-        ></view>
-      </view>
+    <view class="nav-bar__center">
+      <block wx:if="{{loading}}">
+        <view class="nav-bar__loading">
+          <view class="nav-bar__loading-icon"></view>
+        </view>
+      </block>
       <block wx:if="{{title}}">
-        <text>{{title}}</text>
+        <text class="nav-bar__title">{{title}}</text>
       </block>
-      <block wx:else>
-        <slot name="center"></slot>
-      </block>
+      <slot name="center"></slot>
     </view>
-    
-    <!-- 右侧留空 -->
-    <view class='weui-navigation-bar__right'>
+
+    <view class="nav-bar__right" style="width: {{menuButtonRight}}px;">
       <slot name="right"></slot>
     </view>
   </view>
 </view>
+
+<view wx:if="{{fixed && placeholder}}" class="nav-bar__placeholder" style="height: {{statusBarHeight + navBarHeight}}px;"></view>
