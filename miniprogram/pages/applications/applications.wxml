@@ -1,0 +1,83 @@
+<view class="applications-container">
+  <navigation-bar 
+    title="我的申请" 
+    fixed="{{true}}"
+    blur="{{true}}"
+  >
+    <view slot="right" class="header-action" bindtap="openSearch">
+      <text class="action-icon">🔍</text>
+    </view>
+  </navigation-bar>
+  
+  <view class="tabs">
+    <view 
+      class="tab-item {{activeTab === 'all' ? 'active' : ''}}" 
+      bindtap="switchTab" 
+      data-tab="all"
+    >
+      <text class="tab-text">全部</text>
+    </view>
+    <view 
+      class="tab-item {{activeTab === 'pending' ? 'active' : ''}}" 
+      bindtap="switchTab" 
+      data-tab="pending"
+    >
+      <text class="tab-text">审核中</text>
+    </view>
+    <view 
+      class="tab-item {{activeTab === 'approved' ? 'active' : ''}}" 
+      bindtap="switchTab" 
+      data-tab="approved"
+    >
+      <text class="tab-text">已通过</text>
+    </view>
+    <view 
+      class="tab-item {{activeTab === 'rejected' ? 'active' : ''}}" 
+      bindtap="switchTab" 
+      data-tab="rejected"
+    >
+      <text class="tab-text">未通过</text>
+    </view>
+  </view>
+  
+  <scroll-view class="applications-content" scroll-y enhanced show-scrollbar="{{false}}">
+    <view class="applications-list">
+      <view 
+        class="application-item" 
+        wx:for="{{applications}}" 
+        wx:key="id"
+        bindtap="goToDetail"
+        data-id="{{item.id}}"
+      >
+        <view class="application-icon {{item.category}}">
+          <text class="icon">{{item.icon}}</text>
+        </view>
+        <view class="application-info">
+          <view class="application-header">
+            <view class="application-type {{item.typeClass}}">{{item.type}}</view>
+            <text class="application-name">{{item.name}}</text>
+          </view>
+          <text class="application-date">提交日期: {{item.date}}</text>
+        </view>
+        <view class="application-status {{item.statusClass}}">
+          <text class="status-text">{{item.statusText}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  
+  <view class="footer-nav">
+    <view class="nav-item" bindtap="goToHome">
+      <text class="nav-icon">🏠</text>
+      <text class="nav-label">首页</text>
+    </view>
+    <view class="nav-item active">
+      <text class="nav-icon">📋</text>
+      <text class="nav-label">我的申请</text>
+    </view>
+    <view class="nav-item" bindtap="goToSettings">
+      <text class="nav-icon">⚙️</text>
+      <text class="nav-label">设置</text>
+    </view>
+  </view>
+</view>

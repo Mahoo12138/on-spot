@@ -1,0 +1,86 @@
+<view class="detail-container">
+  <navigation-bar 
+    title="申请详情" 
+    fixed="{{true}}"
+    blur="{{true}}"
+  />
+  
+  <scroll-view class="detail-content" scroll-y enhanced show-scrollbar="{{false}}">
+    <view class="detail-card">
+      <view class="detail-header">
+        <view class="detail-type">分场 · 修改</view>
+        <view class="detail-name">万达广场 - 1层停车场</view>
+        <view class="detail-status pending">
+          <text class="status-icon">⏱️</text>
+          <text class="status-text">审核中</text>
+        </view>
+      </view>
+    </view>
+    
+    <view class="comparison-section">
+      <view class="section-title">信息比对</view>
+      
+      <view class="comparison-list">
+        <view class="comparison-item">
+          <view class="comparison-header">
+            <text class="comparison-label">分场名称</text>
+          </view>
+          <view class="comparison-content">
+            <view class="comparison-old">
+              <text class="comparison-tag">原信息</text>
+              <text class="comparison-value old">万达广场停车场</text>
+            </view>
+            <view class="comparison-new">
+              <text class="comparison-tag new">拟修改信息</text>
+              <text class="comparison-value">万达广场 - 1层停车场</text>
+            </view>
+          </view>
+        </view>
+        
+        <view class="comparison-item">
+          <view class="comparison-header">
+            <text class="comparison-label">分类标签</text>
+          </view>
+          <view class="comparison-content">
+            <view class="comparison-old">
+              <text class="comparison-tag">原信息</text>
+              <text class="comparison-value old">交通设施</text>
+            </view>
+            <view class="comparison-new">
+              <text class="comparison-tag new">拟修改信息</text>
+              <text class="comparison-value">室内停车场</text>
+            </view>
+          </view>
+        </view>
+        
+        <view class="comparison-item">
+          <view class="comparison-header">
+            <text class="comparison-label">详细备注</text>
+          </view>
+          <view class="comparison-content">
+            <view class="comparison-old">
+              <text class="comparison-tag">原信息</text>
+              <text class="comparison-value old italic">无备注内容</text>
+            </view>
+            <view class="comparison-new">
+              <text class="comparison-tag new">拟修改信息</text>
+              <text class="comparison-value">增加了充电桩区域的具体指示，位于停车场西北角。</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    
+    <view class="meta-info">
+      <text class="meta-text">提交日期: 2023-10-22 14:30</text>
+      <text class="meta-text">流水号: #APP-2023102209</text>
+    </view>
+  </scroll-view>
+  
+  <view class="detail-footer">
+    <button class="withdraw-btn" bindtap="withdrawApplication">
+      撤回申请
+    </button>
+    <text class="footer-note">撤回后您可以重新编辑并再次提交申请</text>
+  </view>
+</view>
