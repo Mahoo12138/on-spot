@@ -1,0 +1,38 @@
+<view class="permission-container">
+  <view class="permission-content">
+    <view class="icon-wrapper">
+      <text class="icon-location">📍</text>
+    </view>
+    <view class="title">请开启必要权限</view>
+    <view class="subtitle">需要获取您的实时位置，<text class="line-break">才能查看/进入现场信息</text></view>
+  </view>
+  
+  <view class="permission-actions">
+    <button class="btn-primary" bindtap="requestLocation">
+      开启位置权限
+    </button>
+    <button class="btn-secondary" bindtap="skipPermission">
+      仅浏览（无位置，无法查看信息）
+    </button>
+  </view>
+  
+  <view class="login-prompt">
+    <view class="login-card">
+      <view class="login-header">
+        <view class="login-info">
+          <view class="login-title">更完整的体验</view>
+          <view class="login-desc">登录以发布信息和管理内容</view>
+        </view>
+        <view class="login-icon-wrapper">
+          <text class="icon-person">👤</text>
+        </view>
+      </view>
+      <view class="login-actions">
+        <view class="login-btn" bindtap="goToLogin">立即登录</view>
+        <view class="divider"></view>
+        <view class="login-btn-secondary" bindtap="skipLogin">稍后登录</view>
+      </view>
+    </view>
+    <view class="privacy-note">我们会严格保护您的隐私安全</view>
+  </view>
+</view>
