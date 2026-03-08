@@ -1,0 +1,141 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-bg-page);
+  max-width: 750rpx;
+  margin: 0 auto;
+}
+
+.profile-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32rpx;
+  padding-top: calc(96rpx + env(safe-area-inset-top));
+  background-color: var(--color-bg-page);
+}
+
+.header-title {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.5rpx;
+}
+
+.profile-content {
+  flex: 1;
+  padding-bottom: 160rpx;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 64rpx 32rpx;
+}
+
+.avatar-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1rpx solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  margin-bottom: 32rpx;
+}
+
+.avatar-icon {
+  font-size: 96rpx;
+  opacity: 0.5;
+}
+
+.user-name {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 16rpx;
+}
+
+.user-uid {
+  font-size: 26rpx;
+  color: var(--color-text-tertiary);
+}
+
+.menu-list {
+  padding: 0 32rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 32rpx;
+  padding: 32rpx;
+  background-color: #ffffff;
+  border-radius: 24rpx;
+  border: 1rpx solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.1s ease;
+}
+
+.menu-item:active {
+  transform: scale(0.99);
+}
+
+.menu-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 16rpx;
+  flex-shrink: 0;
+}
+
+.menu-icon .icon {
+  font-size: 48rpx;
+}
+
+.menu-icon.applications {
+  background-color: rgba(16, 185, 129, 0.1);
+}
+
+.menu-icon.agreement {
+  background-color: var(--color-bg-input);
+}
+
+.menu-label {
+  flex: 1;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.menu-arrow {
+  font-size: 40rpx;
+  color: var(--color-text-tertiary);
+}
+
+.footer-note {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 96rpx 64rpx;
+  text-align: center;
+}
+
+.note-text {
+  font-size: 24rpx;
+  color: var(--color-text-tertiary);
+  line-height: 1.8;
+}

@@ -1,0 +1,43 @@
+<view class="profile-container">
+  <navigation-bar 
+    title="个人中心" 
+    back="{{false}}"
+    fixed="{{true}}"
+    transparent="{{true}}"
+  />
+  
+  <view class="profile-content">
+    <view class="user-info">
+      <view class="avatar-wrapper">
+        <text class="avatar-icon">👤</text>
+      </view>
+      <view class="user-name">说说用户_9527</view>
+      <view class="user-uid">UID: 10009527</view>
+    </view>
+    
+    <view class="menu-list">
+      <view class="menu-item" bindtap="goToApplications">
+        <view class="menu-icon applications">
+          <text class="icon">✅</text>
+        </view>
+        <text class="menu-label">我的申请</text>
+        <text class="menu-arrow">›</text>
+      </view>
+      
+      <view class="menu-item" bindtap="openAgreement">
+        <view class="menu-icon agreement">
+          <text class="icon">📄</text>
+        </view>
+        <text class="menu-label">用户协议 / 隐私政策</text>
+        <text class="menu-arrow">›</text>
+      </view>
+    </view>
+    
+    <view class="footer-note">
+      <text class="note-text">个人开发·纯便民工具</text>
+      <text class="note-text">无广告、无社交、不收集无关信息</text>
+    </view>
+  </view>
+  
+  <tab-bar activeTab="profile" />
+</view>
