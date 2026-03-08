@@ -1,0 +1,80 @@
+.splash-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ffffff;
+  padding: 0 48rpx;
+  box-sizing: border-box;
+}
+
+.splash-content {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 280rpx;
+}
+
+.logo-wrapper {
+  position: relative;
+  margin-bottom: 64rpx;
+}
+
+.logo-icon {
+  width: 160rpx;
+  height: 160rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-location {
+  font-size: 140rpx;
+  color: var(--color-primary);
+}
+
+.logo-dot {
+  position: absolute;
+  top: -8rpx;
+  right: -8rpx;
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 50%;
+  background-color: rgba(43, 140, 238, 0.2);
+}
+
+.title {
+  font-size: 72rpx;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -2rpx;
+  margin-bottom: 24rpx;
+}
+
+.subtitle {
+  font-size: 32rpx;
+  font-weight: 400;
+  color: var(--color-text-tertiary);
+  text-align: center;
+  letter-spacing: 2rpx;
+}
+
+.splash-footer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 96rpx;
+}
+
+.footer-text {
+  font-size: 22rpx;
+  font-weight: 300;
+  color: var(--color-text-tertiary);
+  letter-spacing: 4rpx;
+  opacity: 0.6;
+}

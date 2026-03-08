@@ -1,0 +1,15 @@
+<view class="splash-container">
+  <view class="splash-content">
+    <view class="logo-wrapper">
+      <view class="logo-icon">
+        <text class="icon-location">📍</text>
+      </view>
+      <view class="logo-dot"></view>
+    </view>
+    <view class="title">现场说说</view>
+    <view class="subtitle">走到哪，看哪的现场信息</view>
+  </view>
+  <view class="splash-footer">
+    <text class="footer-text">个人开发 · 纯便民工具</text>
+  </view>
+</view>
