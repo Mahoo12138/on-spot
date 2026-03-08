@@ -1,11 +1,37 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/splash/splash",
+    "pages/permission/permission",
+    "pages/venues-list/venues-list",
+    "pages/favorites/favorites",
+    "pages/profile/profile",
+    "pages/applications/applications",
+    "pages/application-detail/application-detail"
   ],
   "window": {
     "navigationBarTextStyle": "black",
-    "navigationStyle": "custom"
+    "navigationStyle": "custom",
+    "backgroundColor": "#f6f7f8"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#94a3b8",
+    "selectedColor": "#2b8cee",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/venues-list/venues-list",
+        "text": "附近的现场"
+      },
+      {
+        "pagePath": "pages/favorites/favorites",
+        "text": "我的关注"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "个人中心"
+      }
+    ]
   },
   "style": "v2",
   "rendererOptions": {
